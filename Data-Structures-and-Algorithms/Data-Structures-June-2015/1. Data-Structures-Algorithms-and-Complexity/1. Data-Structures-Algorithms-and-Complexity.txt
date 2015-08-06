@@ -1,0 +1,116 @@
+// Problem 1.	Add(T) Complexity
+// Calculate the expected running time O(f(n)) of the Add(T) operation in the above code in the worst case.
+	
+public void Add(T item)
+{
+	var newArr = new T[this.arr.Length + 1];
+	Array.Copy(this.arr, newArr, this.arr.Length);
+	newArr[newArr.Length - 1] = item;
+	this.arr = newArr;
+}
+
+// O(n)
+
+	
+// Problem 2.	Remove(index) Complexity – Worst Case
+// Calculate the expected running time O(f(n)) of the Remove(index) operation in the worst case.
+	
+public T Remove(int index)
+{
+	T result = this.arr[index];
+	var newArr = new T[this.arr.Length - 1];
+	Array.Copy(this.arr, newArr, index);
+	Array.Copy(this.arr, index + 1, newArr, index, this.arr.Length - index - 1);
+	this.arr = newArr;
+	return result;
+}
+
+// O(n)
+		
+		
+// Problem 3.	Remove(index) Complexity – Best Case
+// Calculate the expected running time O(f(n)) of the Remove(index) operation in the best case.
+	
+// O(1)
+	
+	
+// Problem 4.	Remove(index) Complexity – Average Case
+// Calculate the expected running time O(f(n)) of the Remove(index) operation in the average case.
+	
+// O(n)
+	
+// Problem 5.	RemoveFirst(T) Complexity
+// Calculate the expected running time O(f(n)) of the RemoveFirst(T) operation. Submit the result in a text file.
+
+public T RemoveFirst()
+{
+	return this.Remove(0);
+}
+
+// O(1)
+
+// Problem 6.	RemoveLast(T) Complexity
+// Calculate the expected running time O(f(n)) of the RemoveLast(T) operation. Submit the result in a text file
+
+public T RemoveLast()
+{
+	return this.Remove(this.Length - 1);
+}
+
+// O(1)
+
+	
+// Problem 7.	Length Complexity
+// Calculate the expected running time O(f(n)) of the Length operation. Submit the result in a text file.
+
+public int Length
+{
+	get
+	{
+		return this.arr.Length;
+	}
+}
+
+// O(1)
+
+	
+// Problem 8.	This[index] Complexity
+// Calculate the expected running time O(f(n)) of the operation this[index]. Submit the result in a text file.
+
+public T this[int index]
+{
+	get
+	{
+		return this.arr[index];
+	}
+}
+
+// O(1)
+
+	
+// Problem 9.	First Complexity
+// Calculate the expected running time O(f(n)) of the First operation. Submit the result in a text file.
+
+public T First
+{
+	get
+	{
+		return this.arr[0];
+	}
+}
+
+// O(1)
+	
+	
+// Problem 10.	Last Complexity
+// Calculate the expected running time O(f(n)) of the Last operation. Submit the result in a text file.
+
+public T Last
+{
+	get
+	{
+		return this.arr[this.arr.Length - 1];
+	}
+}
+
+// O(1)
